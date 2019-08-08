@@ -1,0 +1,74 @@
+---
+fac:
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css">
+
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <header class="flex-center">
+      <div>
+        <h1 class="editable">Nengah Guest House</h1>
+        <h2 class="editable">Pererenan bali</h2>
+      </div>
+    </header>
+    <section>
+      <h2 class="editable">The Facilities</h2>
+      <h3 class="editable">for the perfect changu stay</h3>
+      <div class="grid">
+        {% for fac in page.facilities %}
+        <div class="col-4_sm-12">
+          <div class="fac-bg" style="background-image:url('{{fac.img_path}}')">
+
+          </div>
+          <div class="fac-para">
+            <h2>{{fac.heading}}</h2>
+            <p>{{fac.description}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <h2 class="editable">Our Location</h2>
+      <h3 class="editable">close to the beach and changu</h3>
+      <div class="grid-center-middle">
+        <div class="col-7_sm-12">
+          <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="col-5_sm-12 editable">
+          <p>we are located in down town Pererenan, walking distance to shops, cafe and less then 1k from the beach</p>
+          <h4>our adress</h4>
+          <p>Jl. Munduk Kedungu No.29, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351</p>
+        </div>
+      </div>
+    </section>
+    <footer class="center">
+      <h2>enquire now</h2>
+      <h3>for rates and avalability</h3>
+      <a href="tel:" target="_blank"><span>whatsapp:</span> +62 555 555</a>
+      <a href="mailto:joe@example.com?subject=feedback" target="_blank"><span>email</span>johndoe@gmail.com</a>
+      <a href="https://www.facebook.com/Pererenan-Nengah-Guest-House-Canggu-157351338286278/" class="underline" target="_blank">message us on facebook</a>
+
+    </footer>
+  </body>
+</html>
