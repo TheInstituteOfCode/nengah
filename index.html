@@ -1,17 +1,23 @@
 ---
-fac:
+facilities:
 - img_path: https://picsum.photos/200
   heading: bob
-  description:  dave
+  description:  dave does the thing
 - img_path: https://picsum.photos/200
   heading: bob
-  description:  dave
+  description:  dave Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 - img_path: https://picsum.photos/200
   heading: bob
-  description:  dave
+  description:  dave Lorem ipnsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 - img_path: https://picsum.photos/200
   heading: bob
-  description:  dave
+  description:  dave Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ali officia deserunt mollit anim id est laborum.
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave Lorem ip dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- img_path: https://picsum.photos/200
+  heading: bob
+  description:  dave Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
 
 <!DOCTYPE html>
@@ -19,21 +25,24 @@ fac:
   <head>
     <meta charset="utf-8">
     <title></title>
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css">
 
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
     <header class="flex-center">
-      <div>
-        <h1 class="editable">Nengah Guest House</h1>
-        <h2 class="editable">Pererenan bali</h2>
+      <div class="flex-header-shrink editable">
+        <h1 class="">Nengah Guest House</h1>
+        <h2 class="">Pererenan bali</h2>
       </div>
     </header>
-    <section>
-      <h2 class="editable">The Facilities</h2>
-      <h3 class="editable">for the perfect changu stay</h3>
+    <section class="featured-bg">
+      <div class="padded">
+        <h2 class="editable">The Facilities</h2>
+        <h3 class="editable">for the perfect changu stay</h3>
+      </div>
+
       <div class="grid">
         {% for fac in page.facilities %}
         <div class="col-4_sm-12">
@@ -41,7 +50,7 @@ fac:
 
           </div>
           <div class="fac-para">
-            <h2>{{fac.heading}}</h2>
+            <h2 class="left">{{fac.heading}}</h2>
             <p>{{fac.description}}</p>
           </div>
         </div>
@@ -52,17 +61,17 @@ fac:
       <h2 class="editable">Our Location</h2>
       <h3 class="editable">close to the beach and changu</h3>
       <div class="grid-center-middle">
-        <div class="col-7_sm-12">
-          <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div class="col-7_md-12 padded">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1694.7473998674675!2d115.1274642642787!3d-8.64968820315542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xea919719d8b77f1e!2sNengah+Homestay!5e0!3m2!1sen!2sid!4v1565248593457!5m2!1sen!2sid" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
-        <div class="col-5_sm-12 editable">
+        <div class="col-5_md-12 editable">
           <p>we are located in down town Pererenan, walking distance to shops, cafe and less then 1k from the beach</p>
           <h4>our adress</h4>
           <p>Jl. Munduk Kedungu No.29, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351</p>
         </div>
       </div>
     </section>
-    <footer class="center">
+    <footer class="center featured-bg">
       <h2>enquire now</h2>
       <h3>for rates and avalability</h3>
       <a href="tel:" target="_blank"><span>whatsapp:</span> +62 555 555</a>
