@@ -22,7 +22,6 @@ body{
 }
 
 
-
 section,header,footer{
   padding: 4% 9%;
 }
@@ -55,6 +54,12 @@ a{
   color: inherit;
 }
 
+li{
+  list-style: inside;
+  margin: 1rem;
+  padding-left: 4%;
+}
+
 .padded{padding: 5%}
 
 .left{text-align: center;}
@@ -83,6 +88,13 @@ a{
   padding: 5%;
   margin-top: -10%;
 }
+
+.price-card{
+    margin: 1rem;
+    padding: 4%;
+    background-color: #d7d7d7;
+    border-radius: 5px;
+  }
 
 
 /* header */

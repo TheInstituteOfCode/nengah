@@ -22,88 +22,126 @@ facilities:
   - img_path:
     heading:
     description:
+price:
+  - title: base
+    cost: 350 000
+    perk:
+      - room
+      - wifi
+      - private bathroom
+  - title: delux
+    cost: 450 000
+    perk:
+      - room
+      - wifi
+      - private bathroom
+
 ---
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href=".ico" />
-    <title>Nengah Guest House</title>
-    <meta name=viewport content="width=device-width, initial-scale=1" />
-    <meta property="og:site_name" content="www.temp.com" />
-    <meta property="og:title" content="Nengah Guest House" />
-    <meta property="og:description" content="Nengah Guest House is the perfect spot for a great bali adventuer." />
-    <meta property="og:image" content="/assets/images/ioc-experience1.jpg" />
-    <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="www.instituteofcode.com" />
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href=".ico" />
+  <title>Nengah Guest House</title>
+  <meta name=viewport content="width=device-width, initial-scale=1" />
+  <meta property="og:site_name" content="www.temp.com" />
+  <meta property="og:title" content="Nengah Guest House" />
+  <meta property="og:description" content="Nengah Guest House is the perfect spot for a great bali adventuer." />
+  <meta property="og:image" content="/assets/images/ioc-experience1.jpg" />
+  <meta property="og:url" content="/" />
+  <meta property="og:site_name" content="www.instituteofcode.com" />
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css" />
 
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-  <body>
-    <header class="flex-center" style="background-image:url('{{page.banner_path}}')">
-      <div class="flex-header-shrink editable">
-        <h1>Nengah Guest House</h1>
-        <h2>Pererenan Bali</h2>
-      </div>
-    </header>
-    <section class="featured-bg">
-      <div class="padded">
-        <h2 class="editable">
-          The Facilities
-        </h2>
-        <h3 class="editable">
-          Pererenan nengah guest house
-        </h3>
-      </div>
-
-      <div class="grid">
-        {% for fac in page.facilities %}
-        <div class="col-4_sm-12">
-          <div class="fac-bg" style="background-image:url('{{fac.img_path}}')">
-
-          </div>
-          <div class="fac-para">
-            <h2 class="left">{{fac.heading}}</h2>
-            <p>{{fac.description}}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-    <section>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header class="flex-center" style="background-image:url('{{page.banner_path}}')">
+    <div class="flex-header-shrink editable">
+      <h1>Nengah Guest House</h1>
+      <h2>Pererenan Bali</h2>
+    </div>
+  </header>
+  <section class="featured-bg">
+    <div class="padded">
       <h2 class="editable">
-        Our Location
+        The Facilities
       </h2>
       <h3 class="editable">
-        close to the beach and changgu
+        Pererenan nengah guest house
       </h3>
-      <div class="grid-center-middle">
-        <div class="col-7_md-12 padded">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6609.816584751271!2d115.12687520381391!3d-8.650172169069409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xea919719d8b77f1e!2sNengah+Homestay!5e0!3m2!1sen!2sid!4v1565753458600!5m2!1sen!2sid" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <div class="grid">
+      {% for fac in page.facilities %}
+      <div class="col-4_sm-12">
+        <div class="fac-bg" style="background-image:url('{{fac.img_path}}')">
+
         </div>
-        <div class="col-5_md-12 editable">
-          <p>we are located in down town Pererenan, walking distance to shops, cafe and less then 1k from the beach</p>
-          <h4>our adress</h4>
-          <p>Jl. Munduk Kedungu No.29, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351</p>
+        <div class="fac-para">
+          <h2 class="left">{{fac.heading}}</h2>
+          <p>{{fac.description}}</p>
         </div>
       </div>
-    </section>
-    <footer class="center featured-bg">
-      <h2 class="editable">
-        enquire now
-      </h2>
-      <h3 class="editable">
-        for rates and avalability
-      </h3>
+      {% endfor %}
+    </div>
+  </section>
+  <section>
+    <div class="editable">
+      <h2>Price</h2>
+    </div>
+    <div class="grid">
+      {% for price in page.price %}
+      <div class="col-4_sm-12">
+        <div class="price-card">
+          <h3>{{price.title}}</h3>
+          <h4>{{price.cost}}</h4>
+          <p>
+            <ul>
+              {% for ben in price.perk %}
+              <li>
+                {{ben}}
+              </li>
+              {% endfor %}
+            </ul>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <section>
+    <h2 class="editable">
+      Our Location
+    </h2>
+    <h3 class="editable">
+      Close to the beach and changgu
+    </h3>
+    <div class="grid-center-middle">
+      <div class="col-7_md-12 padded">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6609.816584751271!2d115.12687520381391!3d-8.650172169069409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xea919719d8b77f1e!2sNengah+Homestay!5e0!3m2!1sen!2sid!4v1565753458600!5m2!1sen!2sid" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="col-5_md-12 editable">
+        <p>we are located in down town Pererenan, walking distance to shops, cafe and less then 1k from the beach</p>
+        <h3>our adress</h3>
+        <p>Jl. Munduk Kedungu No.29, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351</p>
+      </div>
+    </div>
+  </section>
+  <footer class="center featured-bg">
+    <h2 class="editable">
+      enquire now
+    </h2>
+    <h3 class="editable">
+      for rates and avalability
+    </h3>
 
-      <a class="editable" href="tel:+6281337273300" target="_blank"><span>whatsapp:</span> +62 81337273300</a>
-      <a class="editable" href="mailto:nengahpererenan@yahoo.co.id" target="_blank"><span>email:</span> nengahpererenan@yahoo.co.id</a>
-      <a class="editable" href="https://www.facebook.com/Pererenan-Nengah-Guest-House-Canggu-157351338286278/" target="_blank">message us on faceboook</a>
+    <a class="editable" href="tel:+6281337273300" target="_blank"><span>whatsapp:</span> +62 81337273300</a>
+    <a class="editable" href="mailto:nengahpererenan@yahoo.co.id" target="_blank"><span>email:</span> nengahpererenan@yahoo.co.id</a>
+    <a class="editable" href="https://www.facebook.com/Pererenan-Nengah-Guest-House-Canggu-157351338286278/" target="_blank">message us on faceboook</a>
 
-    </footer>
-  </body>
+  </footer>
+</body>
 </html>
